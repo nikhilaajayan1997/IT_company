@@ -1,0 +1,886 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+    @keyframes example {
+        0%   { left:0px; top:0px;}
+  25%  {background-color:rgb(134, 134, 131); }
+
+}
+
+#div1:hover {
+    position: relative;
+  animation-name: example;
+  animation-duration: 2s;
+}
+#div2 {
+  
+  position: relative;
+  animation-name: example1;
+  animation-duration: 2s;  
+  animation-fill-mode: forwards;
+}
+@keyframes example1 {
+  from {top:100px;}
+  to {top: 30px; color: rgb(199, 197, 197);}
+  
+}
+#div4 {
+  
+  position: relative;
+  animation-name: example4;
+  animation-duration: 2s;  
+  animation-fill-mode: forwards;
+}
+@keyframes example4 {
+  from {top:100px;}
+  to {top: -100px; color: rgb(24, 24, 24);}
+  
+}
+
+
+
+.card1{
+    width: 100%;
+    height: 330px;
+    padding: 2rem 1rem;
+    background: #fff;
+    position: relative;
+    box-shadow: 0px 7px 10px rgba(0,0,0,0.5);
+    transition: 0.5s ease-in-out;
+}
+.card1::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,rgba(67, 82, 80, 0.5),rgb(39, 41, 22));
+    z-index: 2;
+    transition: 0.5s all;
+    opacity: 0;
+}
+.card1:hover::before{
+    opacity: 1;
+}
+.card1 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top:0;
+    left: 0;
+}
+.card1 .info{
+    position: relative;
+    z-index: 3;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.5s all;
+
+}
+.card1:hover .info{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.animate-charcter
+{
+   text-transform: uppercase;
+   margin-top: 20%;
+  background-image: linear-gradient(
+    -225deg,
+    #574b15 0%,
+    #aeb107 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  /* text-fill-color: transparent; */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 190px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+
+
+
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  background: #f1f1f1f1;
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 80px;
+  text-align: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #888;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+  text-align: center;
+  padding: 20px;
+  background: #ddd;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Add an italic font style to all quotes */
+q {font-style: italic;}
+
+/* Add a blue color to the author */
+.author {color: cornflowerblue;}
+
+
+
+
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
+
+
+
+
+
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+.flip-card-back {
+  background-color: rgba(136, 134, 134, 0.589);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+
+
+
+.wavy {
+  position: relative;
+}
+.wavy span {
+  position: relative;
+  display: inline-block;
+  font-size: 40px;
+  color: #fff;
+  /* text-transform: uppercase; */
+  animation: flipss 2s infinite;
+  animation-delay: calc(.2s * var(--i))
+}
+@keyframes flipss {
+  0%,80% {
+    transform: rotateY(360deg) 
+  }
+}
+
+
+
+</style>
+<div class="w-100" id="home" style="height: 500px;background-image: url(https://wallpaperaccess.com/full/4684312.jpg);background-repeat: no-repeat;background-size: cover;">
+    <div style="background-color: rgba(51, 50, 50, 0.699);height: 500px;">
+               <div class="row">
+                <div class="col-sm-4 col-md-4 col-lg-4">
+                    <div class="animate-charcter">
+                        <h1 style="color: #796d02;" class="ms-5">XYZ IT Solutions</h1>
+
+                    </div>
+                </div>
+                <div class="col"></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-md-3 col-lg-3">
+                        <div id="div2" class="ms-5">
+                            <h2 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">WE ARE BUILDING <br><span style="font-weight: bold;font-style: italic;color: rgb(160, 111, 5);"> SOFTWARE </span> TO HELP</h2>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-9 col-md-9 col-lg-9"></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-4 col-lg-4">
+                        <div id="div2">
+                            <p style="color: white;text-align: justify;" class="ms-5 me-5">
+                                With supporting text below as a natural lead-in to additional content.
+                                With supporting text below as a natural lead-in to additional content
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col"></div>
+                </div>
+
+        
+    </div>
+
+</div>
+
+<div>
+    <div class="row">
+        <div class="col-sm-12 col-md-3 col-lg-3"></div>
+        <div class="col-sm-12 col-md-6 col-lg-6">
+            <div id="div4" >
+                <div class="row p-3">
+                    <div id="div1" class="col-sm-12 col-md-6 col-lg-6 p-3" style="background-color: rgb(153, 118, 4);">
+                        <center><h1>$29</h1></center>
+                        <center><h5>Web Apps</h5></center>
+                        <center>
+                            <p style="text-align: justify;">
+                                With supporting text below as a natural lead-in to additional content.
+                                    With supporting text below as a natural lead-in to additional content
+                            </p>
+                        </center>
+                        <center><button class="btn btn-light" style="font-weight: bold;">Buy Now</button></center>
+                    </div>
+                    <div id="div1" class="col-sm-12 col-md-6 col-lg-6 p-3" style="background-color: rgb(153, 118, 4);">
+                        <center><h1>$39</h1></center>
+                        <center><h5>Mobile Apps</h5></center>
+                        <center>
+                            <p style="text-align: justify;">
+                                With supporting text below as a natural lead-in to additional content.
+                                    With supporting text below as a natural lead-in to additional content
+                            </p>
+                        </center>
+                        <center><button class="btn btn-light" style="font-weight: bold;">Buy Now</button></center>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3"></div>
+    </div>
+</div>
+
+
+
+<div  id="about">
+    <div class="row mt-2">
+        <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="ms-5">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-6"></div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <h6 style="font-weight: lighter;"><u style="color: rgb(134, 93, 4);">WHO WE ARE</u></h6>
+                        
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-sm-12 col-md-4 col-lg-4"></div>
+                    <div class="col-sm-12 col-md-8 col-lg-8">
+                        <h3 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">WE ARE <span style="font-weight: bold;">SOFTWARE COMPANY</span> PROVIDE IT SERVICES</h3>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-sm-12 col-md-4 col-lg-4"></div>
+                    <div class="col-sm-12 col-md-7 col-lg-7 mb-5">
+                        <p class="bg text-dark me-3" style="font-size: large;text-align: justify;">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem temporibus blanditiis accusamus 
+                            perferendis libero accusantium nisi itaque tempore,
+                             harum aliquid aut, sapiente dolor tenetur. Tempora corrupti suscipit delectus perspiciatis!
+                        </p>
+                        <p class="bg text-dark me-3" style="font-size: large;text-align: justify;">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem temporibus blanditiis accusamus 
+                            perferendis libero accusantium nisi itaque tempore,
+                             
+                        </p>
+                        <button class="btn btn-outline-dark ">Learn More</button>
+
+                    </div>
+                    <div class="col-sm-12 col-md-1 col-lg-1"></div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6">
+            <div style="background-color: #948f90;">
+                <img src="https://thumbs.dreamstime.com/b/happy-man-using-laptop-white-background-isolated-76790728.jpg" alt="no image" style="height: 450px;width: 100%;">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="services" style="background-image: url(https://chandigarhmetro.com/wp-content/uploads/2020/02/how-to-create-perfect-image.jpg);background-repeat: no-repeat;background-size: cover;">
+        <div   style="background-color: rgba(26, 25, 25, 0.705);">
+            <div class="row">
+                <div class="col-sm-12 col-md-4 col-lg-4"></div>
+                <div class="col-sm-12 col-md-4 col-lg-4 ">
+                    <h6 class="mt-5" style="color: rgb(180, 148, 6);text-align: center;">WHY CHOOSE US</h6>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4"></div>
+        
+            </div>
+            <div class="row mt-2 ">
+                <div class="col-sm-12 col-md-3 col-lg-3"></div>
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                    <h2 style="color: white;"><p style="text-align: center;">Design The Concept</p>
+                        <p style="text-align: center;">Of Your Bussiness Idea Now</p>
+                    </h2>
+                </div>
+                <div class="col-sm-12 col-md-3 col-lg-3"></div>
+            </div>
+            <div class="container">
+                <div class="row pb-5 mt-5">
+                    <div class="col-sm-12 col-md-3 col-lg-3">
+                        <div id="div1" class="card" style="background-color: rgba(48, 47, 47, 0.678);">
+                            <div class="card-body">
+                              <h5 class="card-title" style="color: rgb(211, 165, 16);text-align: center;">PRODUCT DESIGN</h5>
+                              <p class="card-text" style="color: rgb(199, 196, 196);text-align: justify;">With supporting text below as a natural lead-in to additional content.
+                                With supporting text below as a natural lead-in to additional content.</p>
+                              <center><a href="#" class="btn btn-outline-warning">Know more</a></center>
+                            </div>
+                          </div>
+                    </div>
+                    <div  class="col-sm-12 col-md-3 col-lg-3">
+                        <div id="div1" class="card" style="background-color: rgba(48, 47, 47, 0.678);">
+                            <div class="card-body" >
+                              <h5 class="card-title" style="color: rgb(211, 165, 16);text-align: center;">DEVELOPMENT</h5>
+                              <p class="card-text" style="color: rgb(196, 193, 193);text-align: justify;">With supporting text below as a natural lead-in to additional content.
+                                With supporting text below as a natural lead-in to additional content.</p>                         
+                                <center><a href="#" class="btn btn-outline-warning">Know more</a></center>
+                            </div>
+                          </div>
+                    </div>
+                    <div  class="col-sm-12 col-md-3 col-lg-3">
+                        <div id="div1" class="card" style="background-color: rgba(48, 47, 47, 0.678);">
+                            <div class="card-body" >
+                              <h5 class="card-title" style="color: rgb(211, 165, 16);text-align: center;">DATA ANALYTICS</h5>
+                              <p class="card-text" style="color: rgb(196, 192, 192);text-align: justify;">With supporting text below as a natural lead-in to additional content.
+                                With supporting text below as a natural lead-in to additional content.</p>
+                                <center><a href="#" class="btn btn-outline-warning">Know more</a></center>
+                            </div>
+                          </div>
+                    </div>
+                    <div  class="col-sm-12 col-md-3 col-lg-3">
+                        <div id="div1" class="card" style="background-color: rgba(48, 47, 47, 0.678);">
+                            <div class="card-body">
+                              <h5 class="card-title" style="color: rgb(211, 165, 16);text-align: center;">CYBER SECURITY</h5>
+                              <p class="card-text" style="color: rgb(189, 187, 187);text-align: justify;">With supporting text below as a natural lead-in to additional content.
+                                With supporting text below as a natural lead-in to additional content.</p>
+                                <center><a href="#" class="btn btn-outline-warning">Know more</a></center>
+                            </div>
+                          </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+
+</div>
+
+<div>
+    <div class="row mt-5  mb-5" >
+        <div class="col-sm-12 col-md-3 col-lg-3"></div>
+        <div class="col-sm-12 col-md-6 col-lg-6">
+            <h1 style="text-align: center;">Our Team</h1>
+            <p style="text-align: center;color: rgb(194, 166, 8);font-size: large;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" >Far far away, behind the word mountains, far from the countries Vokalia  Consonantia, there live the blind texts. Separated they live in</p>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3"></div>
+    </div>
+    <div class="container mb-5 mt-4">
+        <div class="row">
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="card1">
+                    <a href=""><img src="https://www.biowritingservice.com/wp-content/themes/tuborg/images/Executive%20Bio%20Sample%20Photo.png" alt=""></a>
+                    <div class="info">
+                        <h1 style="color:#d1ac07;text-align: center;">Mark Web</h1>
+                        <p style="text-align: justify;">With supporting text below as a natural lead-in to additional content.
+                            With supporting text below as a natural lead-in to additional content</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="card1">
+                    <a href=""><img src="https://www.eyeployment.com/wp-content/uploads/2018/01/ts_report1.jpg" alt=""></a>
+                    <div class="info">
+                        <h1 style="color: #d1ac07;text-align: center;">Juliya Mary</h1>
+                        <p style="text-align: justify;">With supporting text below as a natural lead-in to additional content.
+                            With supporting text below as a natural lead-in to additional content</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="card1">
+                    <a href=""><img src="https://www.biowritingservice.com/wp-content/themes/tuborg/images/Executive%20Bio%20Sample%20Photo.png" alt=""></a>
+                    <div class="info">
+                        <h1 style="color: #d1ac07;text-align: center;">Mark Web</h1>
+                        <p style="text-align: justify;">With supporting text below as a natural lead-in to additional content.
+                            With supporting text below as a natural lead-in to additional content</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="features" style="background-color: rgb(58, 57, 57);">
+    <div class="row " style="margin-top: 15%;">
+        <div class="col-sm-12 col-md-2 col-lg-2"></div>
+        <div class="col-sm-12 col-md-8 col-lg-8">
+<div class="wavy">            
+    <h1 class="mt-5" style="text-align: center;color: white;">
+        <span style="--i:1">O</span>
+   <span style="--i:2">u</span>
+   <span style="--i:3">r</span>
+<br>
+   <span style="--i:5">S</span>
+   <span style="--i:6">p</span>
+   <span style="--i:7">e</span>
+   <span style="--i:8">c</span>
+   <span style="--i:9">i</span>
+   <span style="--i:10">a</span>
+   <span style="--i:11">l</span>
+   <span style="--i:12">i</span>
+   <span style="--i:13">t</span>
+   <span style="--i:14">i</span>
+   <span style="--i:15">e</span>
+   <span style="--i:16">s</span>
+
+    </h1>
+    
+</div>            
+<p style="text-align: center;color: rgb(146, 125, 7);font-size: large;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" >Far far away, behind the word mountains, far from the countries Vokalia Consonantia, there live the blind texts. Separated they live in far from the countries Vokalia Consonantia, there live the blind texts.</p>
+        </div>
+        <div class="col-sm-12 col-md-2 col-lg-2"></div>
+    </div>
+
+    <div class="container">
+        <div class="row pb-5 mt-5 ">
+            <div class="col-sm-12 col-md-3 col-lg-3 " >
+                <div id="div1" class="card toggle1 " style="background-color: rgba(48, 47, 47, 0.678); text-align: center;width: 100%;">
+                        
+                            <div class="card-body">
+                                <h1 class="card-title" style="color: rgb(211, 165, 16);text-align: center;"><i class="fi fi-rr-heart"></i></h1>
+                                <a  href="" class="card-text" style="color: rgb(199, 196, 196);text-decoration: none;font-size:x-large;text-align: center;">Latest Design</a>
+                            </div>                      
+                </div>
+            </div>
+            <div  class="col-sm-12 col-md-3 col-lg-3 ">
+                <div id="div1" class="card  toggle2" style="background-color: rgba(48, 47, 47, 0.678);text-align: center;">
+                    <div class="card-body">
+                      <h1 class="card-title" style="color: rgb(211, 165, 16);text-align: center;"><i class="fi fi-rr-heart"></i></h1>
+                      <a href="" class="card-text" style="color: rgb(199, 196, 196);text-decoration: none;font-size:x-large;text-align: center;">Retina Ready</a>
+                    </div>
+                  </div>
+                
+            </div>
+            <div  class="col-sm-12 col-md-3 col-lg-3">
+                <div id="div1" class="card " style="background-color: rgba(48, 47, 47, 0.678);">
+                    
+                        <div class="card-body">
+                            <h1 class="card-title" style="color: rgb(211, 165, 16);text-align: center;"><i class="fi fi-sr-tool-crop"></i></h1>
+                            <center><a class="card-text" style="color: rgb(199, 196, 196);text-decoration: none;font-size:x-large;">Customize</a></center>
+                          </div>
+                    
+                  </div>
+                
+            </div>
+            <div  class="col-sm-12 col-md-3 col-lg-3">
+                <div id="div1" class="card" style="background-color: rgba(48, 47, 47, 0.678);">
+                    <div class="card-body">
+                      <h1 class="card-title" style="color: rgb(211, 165, 16);text-align: center;"><i class="fi fi-rs-check-circle"></i></h1>
+                      <center><a href="" class=" card-text" style="color: rgb(199, 196, 196);text-decoration: none;font-size:x-large;">Clean</a></center>
+                    </div>
+                  </div>
+                
+            </div>
+
+        </div>
+        <fieldset1 >
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    <h2 class="mt-5" style="text-align: center;color: white;">We are Focussing On Design Solution</h2>
+                     <p style="text-align: center;color: rgb(146, 125, 7);text-align: left;font-size: larger;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" >Far far away, behind the word mountains, far from the countries Consonantia, there live the blind texts. Separated they live in far from the countries Consonantia, there live the blind texts</p>
+
+                     <p class="mt-3" style="color: white;text-align: justify;"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem temporibus blanditiis accusamus 
+                        perferendis libero accusantium nisi itaque tempore,Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem temporibus blanditiis accusamus 
+                        perferendis libero accusantium nisi itaque tempore,</p>
+                    
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    <img src="https://itec.kuleuven-kulak.be/wp-content/uploads/2020/04/laptop.jpg" alt="" class="w-100">
+                </div>
+            </div>
+        </fieldset1>
+
+        <fieldset2  style="display: none;">
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    <img src="https://itec.kuleuven-kulak.be/wp-content/uploads/2020/04/laptop.jpg" alt="" class="w-100">
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    <h3 class="mt-5" style="text-align: center;color: white;">We are Focussing On Design Solution</h3>
+                     <p style="text-align: center;color: rgb(146, 125, 7);text-align: center;font-size: larger;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" >Far far away, behind the word mountains, far from the countries <br> <span style="text-align: center;">Consonantia, there live the blind texts. Separated they live in</span></p>
+
+                     <p class="mt-3" style="color: white;text-align: justify;"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem temporibus blanditiis accusamus 
+                        perferendis libero accusantium nisi itaque tempore, Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem temporibus blanditiis accusamus 
+                        perferendis libero accusantium nisi itaque tempore,</p>
+                    
+                </div>
+                
+            </div>
+        </fieldset2>
+    </div>
+
+    
+</div> 
+
+<div id="contact" class="container mt-5">
+    <div class="row pb-5">
+        <div class="col-sm-12 col-md-6 col-lg-6">
+            <div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31417.266141615346!2d76.39011649999999!3d10.1677878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080625cfebb7d1%3A0x89bcd5a211b5e7e6!2sNedumbassery%2C%20Kerala!5e0!3m2!1sen!2sin!4v1683948203802!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="row">
+                <div class="col-sm-12 col-md-3 col-lg-3"></div>
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                    <h1 class="bg text-dark" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Get In Touch with Us</h1>
+                </div>
+                <div class="col-sm-12 col-md-3 col-lg-3"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-3 col-lg-3"></div>
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                    <p style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;text-align: justify;">
+                        Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum laritas est etiam processus.
+                    </p>
+                </div>
+                <div class="col-sm-12 col-md-3 col-lg-3"></div>        
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-3 col-lg-3"></div>
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                    <div class="row">
+                        <div class="col-sm-4 col-md-3 col-lg-3">
+                            <center><i class="fi fi-rs-marker"></i></center>
+                        </div>
+                        <div class="col-sm-8 col-md-9 col-lg-9">
+                            <center>
+                                <p style="font-weight: bold;">
+                                    795 South Park Avenue, Melbourne, Australia
+                                </p>
+                            </center>
+                        </div>
+                    </div>    
+                    <div class="row">
+                        <div class="col-sm-4 col-md-3 col-lg-3">
+                            <center><i class="fi fi-ss-city"></i></center>
+                        </div>
+                        <div class="col-sm-8 col-md-9 col-lg-9">
+                            <center>
+                                <p style="font-weight: bold;">
+                                    795 South Park Avenue, Melbourne, Australia
+                                </p>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4 col-md-3 col-lg-3">
+                            <center><i class="fi fi-rs-envelope"></i></center>
+                        </div>
+                        <div class="col-sm-8 col-md-9 col-lg-9">
+                           <center>
+                            <p style="font-weight: bold;">
+                                affcatik@gmail.com
+                            </p>
+                           </center>
+                        </div>
+                    </div>
+                    
+
+                   
+                </div>
+                <div class="col-sm-12 col-md-3 col-lg-3"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-3 col-lg-3"></div>
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#message" class="btn btn-outline-dark form-control">Send a message</a>
+                </div>
+                <div class="col-sm-12 col-md-3 col-lg-3"></div>
+            </div>
+            
+
+        </div>
+    </div>
+</div>
+
+<div id="blog" style="background-image: url(https://chandigarhmetro.com/wp-content/uploads/2020/02/how-to-create-perfect-image.jpg);background-repeat: no-repeat;background-size: cover;">
+    <div style="background-color: rgba(54, 54, 54, 0.692);">
+        <div class="container pt-5 pb-5" >
+            <div class="row">
+                <div class="col-sm-12 col-md-4 col-lg-4"></div>
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <center><h5 style="color: rgb(218, 161, 7);">OUR BLOG</h5></center>
+                   <center> <h1 style="color: white;">Latest News & Events</h1></center>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4"></div>
+            </div>
+            <div class="row pt-5 pb-5">
+               
+                <div class="col-sm-12 col-md-4 col-lg-4 ">
+                    <div class="flip-card ">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJUKSFiq4tkjY3SFxxFy9Y-YtZA5PE-TcYb5nssvPk7UexHxvrLwhPL18vNTulRgToS_Y&usqp=CAU" alt="Avatar" style="width:100%;height:200px;">
+                          </div>
+                          <div class="flip-card-back">
+                            <h1 style="color: #cca704;">John Doe</h1>
+                            <p class="ps-2 pe-2" style="text-align: justify;">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem temporibus blanditiis accusamus 
+                                perferendis ,
+                            </p>
+                            <button class="btn btn-outline-warning "> Know More</button>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4 ">
+                    <div class="flip-card ">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJUKSFiq4tkjY3SFxxFy9Y-YtZA5PE-TcYb5nssvPk7UexHxvrLwhPL18vNTulRgToS_Y&usqp=CAU" alt="Avatar" style="width:100%;height:200px;">
+                          </div>
+                          <div class="flip-card-back">
+                            <h1 style="color: #cca704;">John Doe</h1>
+                            <p class="ps-2 pe-2" style="text-align: justify;">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem temporibus blanditiis accusamus 
+                                perferendis ,
+                            </p>
+                            <button class="btn btn-outline-warning "> Know More</button>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4 ">
+                    <div class="flip-card ">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJUKSFiq4tkjY3SFxxFy9Y-YtZA5PE-TcYb5nssvPk7UexHxvrLwhPL18vNTulRgToS_Y&usqp=CAU" alt="Avatar" style="width:100%;height:200px;">
+                          </div>
+                          <div class="flip-card-back">
+                            <h1 style="color: #cca704;">John Doe</h1>
+                            <p class="ps-2 pe-2" style="text-align: justify;">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem temporibus blanditiis accusamus 
+                                perferendis ,
+                            </p>
+                            <button class="btn btn-outline-warning"> Know More</button>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+</div>
+
+
+
+
+
+<div class="bg-light">
+    <div class="row pt-5 mt-5">
+        <div class="col-sm-12 col-md-4 col-lg-4"></div>
+        <div class="col-sm-12 col-md-4 col-lg-4">
+            <center><h1>Our Testimonials</h1></center>
+           <center>
+            <p style="color: #d6b005;">  
+                Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum laritas est etiam processus.
+         </p>
+           </center>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4"></div>
+    </div>
+    <div class="row ">
+        <div class="col-sm-12 col-md-3 col-lg-3"></div>
+        <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="slideshow-container">
+
+                <!-- Full-width slides/quotes -->
+                <div class="mySlides ">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fA%3D%3D&w=1000&q=80" alt="" class="ms-3 me-3" style="border-radius: 50%;height: 290px;width:90%;"><br>
+                  <q>I love you the more in that I believe you had liked me for my own sake and for nothing else</q>
+                  <p class="author">
+                    - John Keats
+                  </p>
+                </div>
+              
+                <div class="mySlides">
+                    <img src="https://raajratna.com/wp-content/uploads/2019/01/person2.jpg" alt="" class="ms-3 me-3" style="border-radius: 50%;height: 290px;width: 90%;"><br>
+
+                  <q>But man is not made for defeat. A man can be destroyed but not defeated.</q>
+                  <p class="author">- Ernest Hemingway</p>
+                </div>
+              
+                <div class="mySlides">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQHr90SktgxkO8GAMhsKO3dp70fDt0eTAyf6VPTBInYpKxHv4pdBptRtRZzF7JEOW8_wM&usqp=CAU" alt="" class="ms-3 me-3"  style="border-radius: 50%;height: 290px;width: 90%;"><br>
+
+                  <q>I have not failed. I've just found 10,000 ways that won't work.</q>
+                  <p class="author">- Thomas A. Edison</p>
+                </div>
+              
+                <!-- Next/prev buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+              </div>
+              
+              <!-- Dots/bullets/indicators -->
+              <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+              </div>
+            
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3"></div>
+    </div>
+
+</div>
+
+
+
+{% include 'message.html' %}
+
+
+<script>
+     $(document).ready(function () {
+        $(".toggle1").click(function (e) {
+          e.preventDefault();
+          $("fieldset1").toggle();
+          $("fieldset2").hide();
+
+        })
+      })
+
+      $(document).ready(function () {
+        $(".toggle2").click(function (e) {
+          e.preventDefault();
+          $("fieldset2").toggle();
+          $("fieldset1").hide();
+
+        })
+      })
+
+
+
+      
+
+
+      var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+
+
+</script>
+
+{% endblock %}
